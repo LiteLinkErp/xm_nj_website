@@ -10,7 +10,6 @@
         const quantityDropdown = document.getElementById('quantity');
         const totalPriceElement = document.getElementById('total-price');
 
-        
             const quantity = parseInt(quantityDropdown.value, 10);
             const totalPrice = quantity*300;
             totalPriceElement.textContent = totalPrice;

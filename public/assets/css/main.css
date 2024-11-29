@@ -732,6 +732,7 @@ section,
   margin: 10px;
   animation-delay: 0.8s;
   color: var(--default-color);
+  background: var(--accent-color);
   border: 2px solid var(--accent-color);
 }
 

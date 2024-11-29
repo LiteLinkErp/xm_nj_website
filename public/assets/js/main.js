@@ -133,7 +133,7 @@
     }
   }
   scrollbooknow.addEventListener('click', (e) => {
-    document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
   });
 
   window.addEventListener('load', toggleScrollbooknow);

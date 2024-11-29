@@ -133,6 +133,7 @@
     }
   }
   scrollbooknow.addEventListener('click', (e) => {
+       alert('ok');
     document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
   });
 

@@ -122,6 +122,28 @@
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
 
+ /**
+   * Scroll top book now
+   */
+  let scrollbooknow = document.querySelector('.scroll-book-now');
+
+  function toggleScrollbooknow() {
+    if (scrollbooknow) {
+      window.scrollY > 100 ? scrollbooknow.classList.add('active') : scrollbooknow.classList.remove('active');
+    }
+  }
+  scrollbooknow.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  window.addEventListener('load', toggleScrollbooknow);
+  document.addEventListener('scroll', toggleScrollbooknow);
+
+
   /**
    * Animation on scroll function and init
    */

@@ -573,6 +573,12 @@ h6 {
     text-align: center;
     padding: inherit;
 }
+
+.scroll-book-now.active {
+  visibility: visible;
+  opacity: 1;
+  bottom: 11px;
+}
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/

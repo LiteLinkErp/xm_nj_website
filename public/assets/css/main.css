@@ -754,11 +754,11 @@ section,
 
 @media (max-width: 768px) {
   .hero .carousel-container {
-    min-height: 100vh;
+    min-height: 50vh;
   }
 
   .hero h2 {
-    font-size: 28px;
+    font-size: 20px;
   }
 }
 

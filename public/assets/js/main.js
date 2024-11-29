@@ -133,11 +133,7 @@
     }
   }
   scrollbooknow.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
   });
 
   window.addEventListener('load', toggleScrollbooknow);

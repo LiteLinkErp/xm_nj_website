@@ -336,6 +336,53 @@
 
     //document.getElementById('message').textContent = data.message;
 }
+  //======================save enquiry 
+  //======================new function to fetch data 
+  async function saveEnquiry() {
+
+      // Select the form
+      const form = document.querySelector('.php-email-form');
+      // Get the values of the input fields
+      const name    = form.querySelector('input[name="name"]').value;
+      const email   = form.querySelector('input[name="email"]').value;
+      const subject = form.querySelector('input[name="subject"]').value;
+      const message = form.querySelector('textarea[name="message"]').value;
+
+    fetch('https://g0f64e949e59aa7-tbsdb20210810.adb.ap-mumbai-1.oraclecloudapps.com/ords/triopexb/xpbooking/saveenquiry', {
+    method: 'POST', // or 'POST', 'PUT', 'DELETE', etc.
+    headers: {
+        'Access-Control-Allow-Origin' : '*', // Or a specific origin
+        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS', // Allowed methods
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization', // Allowed headers
+        'person_name'                 : name,
+        'person_email'                : email,  
+        'enquiry_subject'             : subject,  
+        'enquiry_message'             : message, 
+    },
+})
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        
+           try {
+       
+            console.log('Enquiry response'); 
+            console.log(data); 
+
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+    })
+    .catch(error => {
+        console.error('There was an error!', error);
+    });
+
+    
+}
 
   //====================================
   async function fetchData() {

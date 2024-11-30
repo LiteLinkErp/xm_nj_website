@@ -2679,3 +2679,8 @@ section,
       font-size: small;
   }
 }
+#booking-request-parent{
+  padding: 6px;
+  border: 1px solid darkgreen;
+}
+

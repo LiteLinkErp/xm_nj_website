@@ -466,14 +466,24 @@
               <label for="dateField" class="form-label">To Date</label>
               <input type="date" name="To Date" class="form-control" required>
             </div>
-            
+            <div class="col-md-6">
+            <label for="timeSelect">Select Time</label>
+            <select id="timeSelect" name="time" class="form-control" required>
+                <!-- Time options will be populated by JavaScript -->
+            </select>
+          </div>
+
+          <div class="col-md-12">
+            <textarea name="teamMembers" class="form-control" placeholder="Team Member Names" required></textarea>
+          </div>
+
             <div class="col-md-12 text-center">
               <button type="submit" onclick="saveBookingRequest(event)">Create Booking</button>
             </div>
 
           </div>
         </form>
-      </div><!-- End booking request Form -->
+      </div> <!-- End booking request Form -->
 
       <!--availability Chart-->
         <div class="legend">
@@ -760,7 +770,7 @@ document.querySelector("table").addEventListener("click", function (event) {
     }
     console.log(window.selectedBookings)
 });
-
+generateTimeOptions();
   </script>
 
 

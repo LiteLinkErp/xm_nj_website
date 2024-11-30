@@ -91,7 +91,34 @@ Customize functions for xtreme padel zambia
         alertify.error('Failed to submit enquiry. Please try again.');
     }
   }
-  
+
+
+      // Function to generate the time options for time select list 
+      function generateTimeOptions() {
+        const timeSelect = document.getElementById('timeSelect');
+        let timeOptions = '';
+
+        // Start from 6:00 hours and go up to 23:30 hours
+        for (let hour = 6; hour <= 23; hour++) {
+            const formattedHour = hour < 10 ? '0' + hour : hour; // Add leading zero for hours less than 10
+            
+            // Add both 00 and 30 minute intervals for each hour
+            for (let minute = 0; minute < 60; minute += 30) {
+                const formattedMinute = minute === 0 ? '00' : '30'; // Format minute as '00' or '30'
+                const startTime = `${formattedHour}:${formattedMinute}`;
+                const endHour = hour + (minute === 30 ? 1 : 0);
+                const formattedEndHour = endHour < 10 ? '0' + endHour : endHour; // Add leading zero for end hour if needed
+                const endTime = `${formattedEndHour}:${formattedMinute}`;
+
+                // Format the time range and add it to the options list
+                timeOptions += `<option value="${startTime} to ${endTime}">${startTime} to ${endTime}</option>`;
+            }
+        }
+
+        // Populate the select element with generated options
+        timeSelect.innerHTML = timeOptions;
+    }
+
 /*below functions cannot be called from outsite  */
 (function() {
   "use strict";

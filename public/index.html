@@ -582,7 +582,7 @@
           </div>
 
           <div class="col-lg-8">
-            <form  class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <form  class="php-email-form" onsubmit="saveEnquiry(event)" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -606,7 +606,7 @@
                   <div class="error-message"></div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
 
-                  <button type="submit" onclick="saveEnquiry()">Send Message</button>
+                  <button type="submit">Send Message</button>
                 </div>
 
               </div>

@@ -337,8 +337,8 @@
     //document.getElementById('message').textContent = data.message;
 }
   //======================save enquiry 
-  //======================new function to fetch data 
-  async function saveEnquiry() {
+  async function saveEnquiry(event) {
+    event.preventDefault();
 
       // Select the form
       const form = document.querySelector('.php-email-form');

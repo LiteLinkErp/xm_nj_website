@@ -1684,6 +1684,7 @@ section,
 
 .portfolio .php-email-form input[type=text],
 .portfolio .php-email-form input[type=email],
+.portfolio .php-email-form input[type=date],
 .portfolio .php-email-form textarea {
   font-size: 14px;
   padding: 10px 15px;
@@ -2698,4 +2699,13 @@ section,
 
 .showBookingoption{
   display: flex !important;
+}
+
+.fullScreenTable{
+    position: fixed !important;
+    top: 71px !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
 }

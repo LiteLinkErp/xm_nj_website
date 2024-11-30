@@ -127,7 +127,7 @@ Customize functions for xtreme padel zambia
 // function to show and hide booking options 
 //======================================================================
 function bookingOptions(pClassName){
-
+  console.log(pClassName);
   const hideoption1 = document.querySelector('.booking-request-parent');
   const hideoption2 = document.querySelector('.legend');
   hideoption1.classList.add('hideBookingoption') ;
@@ -135,7 +135,10 @@ function bookingOptions(pClassName){
   const showElement = document.querySelector('.'+pClassName);
   showElement.classList.add('showBookingoption') ;
   showElement.classList.remove('hideBookingoption') ;
+  console.log(showElement);
 }
+
+
 /*below functions cannot be called from outsite  */
 (function() {
   "use strict";

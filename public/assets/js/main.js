@@ -131,7 +131,9 @@ function bookingOptions(pId){
   const hideoption1 = document.querySelector('.booking-request-parent');
   const hideoption2 = document.querySelector('.legend');
   hideoption1.classList.add('hideBookingoption') ;
+  hideoption1.classList.remove('showBookingoption') ;
   hideoption2.classList.add('hideBookingoption') ;
+  hideoption2.classList.remove('showBookingoption') ;
   
   const showElement =document.getElementById(pId);
   showElement.classList.add('showBookingoption') ;

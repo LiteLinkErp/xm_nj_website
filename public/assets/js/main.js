@@ -1,9 +1,5 @@
-/**
-* Template Name: Selecao
-* Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
+/*
+Customize functions for xtreme padel zambia
 */
 /*function for updating racket qty*/ 
      function updateRacketQty(){
@@ -39,6 +35,58 @@
     }
 
   }
+
+  async function saveEnquiry(event) {
+    alert('Enquiry submiting!');
+    event.preventDefault(); // Prevent the default form submission behavior
+  
+    // Select the form
+    const form = document.querySelector('.php-email-form');
+  
+    // Get the values of the input fields
+    const name = form.querySelector('input[name="name"]').value;
+    const email = form.querySelector('input[name="email"]').value;
+    const subject = form.querySelector('input[name="subject"]').value;
+    const message = form.querySelector('textarea[name="message"]').value;
+  
+    try {
+        const response = await fetch(
+            'https://g0f64e949e59aa7-tbsdb20210810.adb.ap-mumbai-1.oraclecloudapps.com/ords/triopexb/xpbooking/saveenquiry',
+            {
+                method: 'POST', // HTTP method
+                headers: {
+                  'Access-Control-Allow-Origin' : '*', // Or a specific origin
+                  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS', // Allowed methods
+                  'Access-Control-Allow-Headers': 'Content-Type, Authorization', // Allowed headers
+                  'person_name'                 : name,
+                  'person_email'                : email,  
+                  'enquiry_subject'             : subject,  
+                  'enquiry_message'             : message, 
+                  'Content-Type'                : 'application/json', // Define JSON payload
+                },
+                body: JSON.stringify({
+                    person_name: name,
+                    person_email: email,
+                    enquiry_subject: subject,
+                    enquiry_message: message,
+                }), // Pass data as JSON
+            }
+        );
+  
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+  
+        const data = await response.json();
+        console.log('Enquiry submitted:', data);
+        alertify.success('Enquiry submitted successfully!');
+        form.reset();
+    } catch (error) {
+        console.error('Error submitting enquiry:', error);
+        alertify.error('Failed to submit enquiry. Please try again.');
+    }
+  }
+/*below functions cannot be called from outsite  */
 (function() {
   "use strict";
 

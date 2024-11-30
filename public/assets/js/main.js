@@ -37,7 +37,7 @@ Customize functions for xtreme padel zambia
   }
 
   async function saveEnquiry(event) {
-    alert('Enquiry submiting!');
+   
     event.preventDefault(); // Prevent the default form submission behavior
   
     // Select the form
@@ -48,7 +48,13 @@ Customize functions for xtreme padel zambia
     const email = form.querySelector('input[name="email"]').value;
     const subject = form.querySelector('input[name="subject"]').value;
     const message = form.querySelector('textarea[name="message"]').value;
-  
+
+    // Validate that all fields are filled
+    if (!name || !email || !subject || !message) {
+      alertify.error('All fields are required!');
+      return; // Prevent form submission if any field is empty
+     }
+
     try {
         const response = await fetch(
             'https://g0f64e949e59aa7-tbsdb20210810.adb.ap-mumbai-1.oraclecloudapps.com/ords/triopexb/xpbooking/saveenquiry',
@@ -78,7 +84,6 @@ Customize functions for xtreme padel zambia
         }
   
         const data = await response.json();
-        console.log('Enquiry submitted:', data);
         alertify.success('Enquiry submitted successfully!');
         form.reset();
     } catch (error) {
@@ -86,6 +91,7 @@ Customize functions for xtreme padel zambia
         alertify.error('Failed to submit enquiry. Please try again.');
     }
   }
+  
 /*below functions cannot be called from outsite  */
 (function() {
   "use strict";

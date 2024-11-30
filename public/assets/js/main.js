@@ -339,7 +339,7 @@
   //======================save enquiry 
   async function saveEnquiry(event) {
     event.preventDefault();
-
+      alert('calling');
       // Select the form
       const form = document.querySelector('.php-email-form');
       // Get the values of the input fields
@@ -347,7 +347,7 @@
       const email   = form.querySelector('input[name="email"]').value;
       const subject = form.querySelector('input[name="subject"]').value;
       const message = form.querySelector('textarea[name="message"]').value;
-
+      console.log(name+email)
     fetch('https://g0f64e949e59aa7-tbsdb20210810.adb.ap-mumbai-1.oraclecloudapps.com/ords/triopexb/xpbooking/saveenquiry', {
     method: 'POST', // or 'POST', 'PUT', 'DELETE', etc.
     headers: {

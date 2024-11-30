@@ -386,6 +386,7 @@
 }
 */
 async function saveEnquiry(event) {
+  alert('Enquiry submiting!');
   event.preventDefault(); // Prevent the default form submission behavior
 
   // Select the form
@@ -410,7 +411,7 @@ async function saveEnquiry(event) {
                 'person_email'                : email,  
                 'enquiry_subject'             : subject,  
                 'enquiry_message'             : message, 
-                'Content-Type': 'application/json', // Define JSON payload
+                'Content-Type'                : 'application/json', // Define JSON payload
               },
               body: JSON.stringify({
                   person_name: name,

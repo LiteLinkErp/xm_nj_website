@@ -108,7 +108,7 @@ Customize functions for xtreme padel zambia
                 const startTime = `${formattedHour}:${formattedMinute} hrs`;
                 
                 // Calculate end time
-                const endHour = (minute === 30) ? hour + 1 : hour;
+                const endHour = (minute === 30) ? hour + 1 : hour + 1;
                 const formattedEndHour = endHour < 10 ? '0' + endHour : endHour; // Add leading zero for end hour if needed
                 const endTime = `${formattedEndHour}:${formattedMinute} hrs`;
 

@@ -429,7 +429,7 @@
         <p>Choose your prefered way of Bokking</p>
          
         <div class="booking-button-container">
-          <button class="booking-button" id="booking-request" onclick="bookingOptions('booking-request-parent')">Create Booking Request</button>
+          <button class="booking-button" id="booking-request" onclick="bookingOptions('booking-request-form')">Create Booking Request</button>
           <button class="booking-button" id="see-chart" onclick="bookingOptions('legend')">See Availability Chart</button>
           <button class="booking-button" id="book-equipment">Book Equipment Only</button>
       </div>
@@ -491,7 +491,7 @@
       </div> <!-- End booking request Form -->
 
       <!--availability Chart-->
-        <div class="legend hideBookingoption">
+        <div class="legend hideBookingoption" id="legend">
           <div class="legend-item">
               <div class="color-box green"></div>
               <span>Available</span>

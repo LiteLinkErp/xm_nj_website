@@ -35,7 +35,9 @@ Customize functions for xtreme padel zambia
     }
 
   }
-
+  //===================================================================
+  // Save Enquiry Function============================================
+  //==================================================================
   async function saveEnquiry(event) {
    
     event.preventDefault(); // Prevent the default form submission behavior
@@ -92,8 +94,9 @@ Customize functions for xtreme padel zambia
     }
   }
 
-
-      // Function to generate the time options for time select list 
+  //=====================================================================
+  // Function to generate the time options for time select list 
+  //=====================================================================
       function generateTimeOptions() {
         const timeSelect = document.getElementById('timeSelect');
         let timeOptions = '';
@@ -120,7 +123,19 @@ Customize functions for xtreme padel zambia
         // Populate the select element with generated options
         timeSelect.innerHTML = timeOptions;
     }
+//======================================================================
+// function to show and hide booking options 
+//======================================================================
+function bookingOptions(pClassName){
 
+  const hideoption1 = document.querySelector('.booking-request-parent');
+  const hideoption2 = document.querySelector('.legend');
+  hideoption1.classList.add('hideBookingoption') ;
+  hideoption2.classList.add('hideBookingoption') ;
+  const showElement = document.querySelector('.'+pClassName);
+  showElement.classList.add('showBookingoption') ;
+  showElement.classList.remove('hideBookingoption') ;
+}
 /*below functions cannot be called from outsite  */
 (function() {
   "use strict";

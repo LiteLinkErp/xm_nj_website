@@ -2691,3 +2691,13 @@ section,
   font-size: large;
   font-weight: 500;
 }
+
+.hideBookingoption{
+  visibility: hidden;
+  opacity: 0;
+}
+
+.showBookingoption{
+  visibility: visible;
+  opacity: 1;
+}

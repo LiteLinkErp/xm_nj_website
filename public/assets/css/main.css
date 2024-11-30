@@ -2684,3 +2684,10 @@ section,
   border: 1px solid darkgreen;
 }
 
+
+#booking-request-parent label {
+  display: inline-block;
+  padding: 4px;
+  font-size: large;
+  font-weight: 500;
+}

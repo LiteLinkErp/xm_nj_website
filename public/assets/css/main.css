@@ -2632,6 +2632,7 @@ section,
   }
   .booking-button {
       width: 100%;  /* Full width on small screens */
-      height: 50px;
+      height: 60px;
+      font-size: small;
   }
 }

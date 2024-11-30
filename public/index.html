@@ -433,7 +433,42 @@
           <button class="booking-button" id="see-chart">See Availability Chart</button>
           <button class="booking-button" id="book-equipment">Book Equipment Only</button>
       </div>
+      <!--Booking Request Forms -->
+      <div class="col-lg-8" id="booking-request-parent">
+        <form class="booking-request-form">
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <select name="bookingFor" class="form-control" required>
+                <option value="" disabled selected>Booking for</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="col-md-12">
+              <input type="text" name="mobile" class="form-control" placeholder="Mobile No" required>
+            </div>
+            <div class="col-md-12">
+              <input type="date" name="From Date" class="form-control" required>
+            </div>
 
+            <div class="col-md-12">
+              <input type="date" name="To Date" class="form-control" required>
+            </div>
+            
+            <div class="col-md-12 text-center">
+              <button type="submit" onclick="saveEnquiry(event)">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div><!-- End booking request Form -->
+
+      <!--availability Chart-->
         <div class="legend">
           <div class="legend-item">
               <div class="color-box green"></div>

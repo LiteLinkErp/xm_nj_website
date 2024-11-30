@@ -2693,11 +2693,9 @@ section,
 }
 
 .hideBookingoption{
-  visibility: hidden;
-  opacity: 0;
+ display: none !important;
 }
 
 .showBookingoption{
-  visibility: visible;
-  opacity: 1;
+  display: flex !important;
 }

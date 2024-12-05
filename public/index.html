@@ -641,20 +641,18 @@
             <form class="php-email-form">
               <div class="row gy-4">
                 
-                <div class="col-md-6">
-                  <input type="text" name="subject" id="enquiry-subject" class="form-control" placeholder="Enquiry Subject" required>
-                </div>
+               
                 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                  <input type="text" name="name" id="enquiry-name" class="form-control" placeholder="Your Name" required>
                 </div>
                 <div class="col-md-6">
-                  <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                  <input type="email" name="email" id="enquiry-email" class="form-control" placeholder="Your Email" required>
                 </div>
-
-                 
-
-                <div class="col-md-">
+                 <div class="col-md-12">
+                  <input type="text" name="subject" id="enquiry-subject" class="form-control" placeholder="Enquiry Subject" required>
+                </div>
+                <div class="col-md-12">
                   <textarea name="message" id="enquiry-message" class="form-control" rows="6" placeholder="Message" required></textarea>
                 </div>
                 

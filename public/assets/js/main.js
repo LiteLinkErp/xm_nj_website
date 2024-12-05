@@ -46,10 +46,12 @@ Customize functions for xtreme padel zambia
     const form = document.querySelector('.php-email-form');
   
     // Get the values of the input fields
-    const name    = form.querySelector('input[name="name"]').value;
-    const email   = form.querySelector('input[name="email"]').value;
     const subject = form.querySelector('input[name="name1"]').value;
     const message = form.querySelector('#enquiry-message').value;
+    const name    = form.querySelector('input[name="name"]').value;
+    const email   = form.querySelector('input[name="email"]').value;
+    
+    
 
     // Validate that all fields are filled
     if (!name || !email || !subject || !message) {

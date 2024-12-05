@@ -48,14 +48,14 @@ Customize functions for xtreme padel zambia
     // Get the values of the input fields
     const subject = document.getElementById('enquiry-subject').value;
     const message = document.getElementById('enquiry-message').value;
-    const name    = form.querySelector('input[name="name"]').value;
-    const email   = form.querySelector('input[name="email"]').value;
+    const name    = document.getElementById('enquiry-name').value;
+    const email   = document.getElementById('enquiry-email').value;
     
     
 
     // Validate that all fields are filled
     if (!name || !email || !subject || !message) {
-      alertify.error('All fields are required!');
+      alertify.error('All fields are required! subject '+subject+' message '+message+' name '+name+' email '+email  );
       return; // Prevent form submission if any field is empty
      }
 

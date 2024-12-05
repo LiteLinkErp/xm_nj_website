@@ -48,8 +48,8 @@ Customize functions for xtreme padel zambia
     // Get the values of the input fields
     const name    = form.querySelector('input[name="name"]').value;
     const email   = form.querySelector('input[name="email"]').value;
-    //const subject = form.querySelector('input[name="subject"]').value;
-    //const message = form.querySelector('textarea[name="message"]').value;
+    const subject = form.querySelector('#enquiry-subject').value;
+    const message = form.querySelector('#enquiry-message').value;
 
     // Validate that all fields are filled
     if (!name || !email || !subject || !message) {

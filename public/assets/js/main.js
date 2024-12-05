@@ -43,7 +43,7 @@ Customize functions for xtreme padel zambia
     event.preventDefault(); // Prevent the default form submission behavior
   
     // Select the form
-    const form = document.querySelector('.php-email-form');
+    const form = document.querySelector('#enquiry-form');
   
     // Get the values of the input fields
     const subject = document.getElementById('enquiry-subject').value;
@@ -55,7 +55,7 @@ Customize functions for xtreme padel zambia
 
     // Validate that all fields are filled
     if (!name || !email || !subject || !message) {
-      alertify.error('All fields are required! subject '+subject+' message '+message+' name '+name+' email '+email  );
+      alertify.error('All fields are required!'  );
       return; // Prevent form submission if any field is empty
      }
 
@@ -442,55 +442,7 @@ function bookingOptions(pId){
 
     //document.getElementById('message').textContent = data.message;
 }
-/*
-  //======================save enquiry 
-  async function saveEnquiry(event) {
-    event.preventDefault();
-      alert('calling');
-      // Select the form
-      const form = document.querySelector('.php-email-form');
-      // Get the values of the input fields
-      const name    = form.querySelector('input[name="name"]').value;
-      const email   = form.querySelector('input[name="email"]').value;
-      const subject = form.querySelector('input[name="subject"]').value;
-      const message = form.querySelector('textarea[name="message"]').value;
-      console.log(name+email)
-    fetch('https://g0f64e949e59aa7-tbsdb20210810.adb.ap-mumbai-1.oraclecloudapps.com/ords/triopexb/xpbooking/saveenquiry', {
-    method: 'POST', // or 'POST', 'PUT', 'DELETE', etc.
-    headers: {
-        'Access-Control-Allow-Origin' : '*', // Or a specific origin
-        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS', // Allowed methods
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization', // Allowed headers
-        'person_name'                 : name,
-        'person_email'                : email,  
-        'enquiry_subject'             : subject,  
-        'enquiry_message'             : message, 
-    },
-})
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        
-           try {
-       
-            console.log('Enquiry response'); 
-            console.log(data); 
 
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-    })
-    .catch(error => {
-        console.error('There was an error!', error);
-    });
-
-    
-}
-*/
 
 
   //====================================

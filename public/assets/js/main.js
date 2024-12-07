@@ -1,6 +1,17 @@
 /*
 Customize functions for xtreme padel zambia
 */
+
+function expandTable(pAtion){
+
+  const myDiv = getElementById('bookingTable');
+  if (pAtion == 'E'){
+    myDiv.classList.add('table-on-top');
+  }else {
+    myDiv.classList.remove('table-on-top');
+  }
+  
+}
 /*function for updating racket qty*/ 
      function updateRacketQty(){
         const quantityDropdown = document.getElementById('quantity');
@@ -489,6 +500,10 @@ function bookingOptions(pId){
         //expendBtn.textContent = 'Click Me';
         expendBtn.id = 'expendBtn';
         expendBtn.innerHTML = '<i class="fas fa-expand-alt"></i>'
+        expendBtn.onclick = function () {
+          expandTable('E');
+        };
+
         const expendth = document.createElement('th');
         expendth.appendChild(expendBtn) ;
         headerRow.appendChild(expendth); // Empty cell for row header

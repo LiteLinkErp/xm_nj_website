@@ -489,9 +489,9 @@ function bookingOptions(pId){
         //expendBtn.textContent = 'Click Me';
         expendBtn.id = 'expendBtn';
         expendBtn.innerHTML = '&#x2b;'
-        const expendButton = document.createElement('th');
-        expendButton.innerHTML = expendBtn;
-        headerRow.appendChild(expendButton); // Empty cell for row header
+        const expendth = document.createElement('th');
+        expendth.appendChild(expendBtn) ;
+        headerRow.appendChild(expendth); // Empty cell for row header
         dates.forEach(date => {
             const th = document.createElement('th');
             th.textContent = date;

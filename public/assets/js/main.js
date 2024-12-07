@@ -4,7 +4,7 @@ Customize functions for xtreme padel zambia
 
 function expandTable(pAtion){
 
-  const myDiv = getElementById('bookingTable');
+  const myDiv = document.getElementById('bookingTable');
   if (pAtion == 'E'){
     myDiv.classList.add('table-on-top');
   }else {

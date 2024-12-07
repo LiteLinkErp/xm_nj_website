@@ -154,7 +154,7 @@ Customize functions for xtreme padel zambia
   
         const data = await response.json();
         console.log(data)
-        alertify.success('Booking Request Created successfully!');
+        alertify.success(data.booking_response);
         form.reset();
     } catch (error) {
         console.error('Error submitting enquiry:', error);

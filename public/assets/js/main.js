@@ -105,6 +105,40 @@ Customize functions for xtreme padel zambia
   
     // Select the form
     const form = document.querySelector('#booking-request-form');
+
+    const fieldsToValidate = [
+      { id: 'bookingFor', name: 'Booking For' },
+      { id: 'booking_name', name: 'Your Name' },
+      { id: 'booking_email', name: 'Email' },
+      { id: 'booking_mobile', name: 'Mobile No' },
+      { id: 'booking_From_Date', name: 'From Date' },
+      { id: 'booking_To_Date', name: 'To Date' },
+      { id: 'booking_timeSelect', name: 'Select Time' },
+      { id: 'booking_teamMembers', name: 'Team Members Name' }
+    ];
+  
+    let isValid = true;
+  
+    // Loop through all the fields and validate them
+    fieldsToValidate.forEach(field => {
+      const input = document.getElementById(field.id);
+      if (!input.value.trim()) {
+        // If field is empty, set border to red
+        input.style.border = '1px solid red';
+        isValid = false;
+      } else {
+        // Otherwise, remove red border
+        input.style.border = '';
+      }
+    });
+  
+    if (isValid) {
+      // If all fields are valid, submit the form
+     
+    } else {
+      alertify.error('Please fill out all required fields.');
+      return;
+    }
   
     // Get the values of the input fields
     const bookingFor             = document.getElementById('bookingFor').value;
@@ -157,7 +191,7 @@ Customize functions for xtreme padel zambia
           alertify.success("Thank You.");
         });
         form.reset();
-        
+
     } catch (error) {
         console.error('Error submitting enquiry:', error);
         alertify.error('Failed to submit enquiry. Please try again.');

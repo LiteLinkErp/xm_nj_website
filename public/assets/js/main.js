@@ -485,8 +485,12 @@ function bookingOptions(pId){
 
         // Create table headers
         const headerRow = document.createElement('tr');
+        const expendBtn = document.createElement('button');
+        //expendBtn.textContent = 'Click Me';
+        expendBtn.id = 'expendBtn';
+        expendBtn.innerHTML = '&#x2b;'
         const expendButton = document.createElement('th');
-        expendButton.textContent = '<->';
+        expendButton.innerHTML = expendBtn;
         headerRow.appendChild(expendButton); // Empty cell for row header
         dates.forEach(date => {
             const th = document.createElement('th');

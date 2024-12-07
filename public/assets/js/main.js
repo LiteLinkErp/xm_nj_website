@@ -166,7 +166,7 @@ Customize functions for xtreme padel zambia
   // Function to generate the time options for time select list 
   //=====================================================================
       function generateTimeOptions() {
-        const timeSelect = document.getElementById('timeSelect');
+        const timeSelect = document.getElementById('booking_timeSelect');
         let timeOptions = '';
 
         // Start from 6:00 hours and go up to 23:30 hours

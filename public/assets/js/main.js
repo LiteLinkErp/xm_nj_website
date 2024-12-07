@@ -96,6 +96,72 @@ Customize functions for xtreme padel zambia
     }
   }
 
+  //===================================================================
+  // Save booking request============================================
+  //==================================================================
+  async function saveBookingRequest(event) {
+   
+    event.preventDefault(); // Prevent the default form submission behavior
+  
+    // Select the form
+    const form = document.querySelector('#booking-request-form');
+  
+    // Get the values of the input fields
+    const bookingFor             = document.getElementById('bookingFor').value;
+    const booking_name           = document.getElementById('booking_name').value;
+    const booking_email          = document.getElementById('booking_email').value;
+    const booking_mobile         = document.getElementById('booking_mobile').value;
+    const booking_From_Date      = document.getElementById('booking_From_Date').value;
+    const booking_To_Date        = document.getElementById('booking_To_Date').value;
+    const booking_timeSelect     = document.getElementById('booking_timeSelect').value;
+    const booking_teamMembers    = document.getElementById('booking_teamMembers').value;
+    
+
+    // Validate that all fields are filled
+    if (!bookingFor || !booking_name|| !booking_email || !booking_mobile || !booking_From_Date || !booking_To_Date || !booking_timeSelect || !booking_teamMembers ) {
+      alertify.error('All fields are required!'  );
+      return; // Prevent form submission if any field is empty
+     }
+
+    try {
+        const response = await fetch(
+            'https://g0f64e949e59aa7-tbsdb20210810.adb.ap-mumbai-1.oraclecloudapps.com/ords/triopexb/xpbooking/xpbooking',
+            {
+                method: 'POST', // HTTP method
+                headers: {
+                  'Access-Control-Allow-Origin' : '*',                            // Or a specific origin
+                  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',           // Allowed methods
+                  'Access-Control-Allow-Headers': 'Content-Type, Authorization',  // Allowed headers
+                  'Content-Type'                : 'application/json',             // Define JSON payload
+                },
+                body: JSON.stringify({
+                  atr_bookingFor: bookingFor,
+                  atr_booking_name: booking_name,
+                  atr_booking_email: booking_email,
+                  atr_booking_mobile: booking_mobile,
+                  atr_booking_From_Date:booking_From_Date,
+                  atr_booking_To_Date : booking_To_Date,
+                  atr_booking_timeSelect :booking_timeSelect,
+                  atr_booking_teamMembers : booking_teamMembers,
+
+                }), // Pass data as JSON
+            }
+        );
+  
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+  
+        const data = await response.json();
+        console.log(data)
+        alertify.success('Booking Request Created successfully!');
+        form.reset();
+    } catch (error) {
+        console.error('Error submitting enquiry:', error);
+        alertify.error('Failed to submit enquiry. Please try again.');
+    }
+  }
+
   //=====================================================================
   // Function to generate the time options for time select list 
   //=====================================================================

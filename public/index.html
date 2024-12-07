@@ -134,6 +134,108 @@
 
     </section><!-- /Hero Section -->
 
+    <!-- Portfolio Section  book now section-->
+<section id="portfolio" class="portfolio section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Bookings</h2>
+    <p>Choose your preferred way of Booking</p>
+
+    <div class="booking-button-container">
+      <button class="booking-button" id="booking-request" onclick="bookingOptions('booking-request-parent')">Create Booking Request</button>
+      <button class="booking-button" id="see-chart" onclick="bookingOptions('legend')">See Availability Chart</button>
+      <button class="booking-button" id="book-equipment">Book Equipment Only</button>
+    </div>
+
+    <!--Booking Request Forms -->
+    <div class="col-lg-8 booking-request-parent hideBookingoption" id="booking-request-parent">
+      <form class="php-email-form" id="booking-request-form">
+        <div class="row gy-4">
+
+          <div class="col-md-6">
+            <label for="bookingFor">Booking For</label>
+            <select name="bookingFor" class="form-control" required>
+              <option value="M" selected>Male</option>
+              <option value="F">Female</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label for="name">Your Name</label>
+            <input type="text" name="name" class="form-control" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="mobile">Mobile No</label>
+            <input type="text" name="mobile" class="form-control" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="dateFieldFrom" class="form-label">From Date</label>
+            <input type="date" name="From Date" class="form-control" id="dateFieldFrom" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="dateFieldTo" class="form-label">To Date</label>
+            <input type="date" name="To Date" class="form-control" id="dateFieldTo" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="timeSelect">Select Time</label>
+            <select id="timeSelect" name="time" class="form-control" required></select>
+          </div>
+
+          <div class="col-md-12">
+            <label for="teamMembers">Team Members Name</label>
+            <textarea name="teamMembers" class="form-control" required></textarea>
+          </div>
+
+          <div class="col-md-12 text-center">
+            <button type="submit">Create Booking</button>
+          </div>
+
+        </div>
+      </form>
+    </div> <!-- End booking request Form -->
+
+    <!--availability Chart-->
+    <div class="legend hideBookingoption" id="legend">
+      <div class="legend-item">
+        <div class="color-box green"></div>
+        <span>Available</span>
+      </div>
+      <div class="legend-item">
+        <div class="color-box blue"></div>
+        <span>Booked (Male)</span>
+      </div>
+      <div class="legend-item">
+        <div class="color-box pink"></div>
+        <span>Booked (Female)</span>
+      </div>
+      <div class="legend-item">
+        <div class="color-box yellow"></div>
+        <span>Selected Now</span>
+      </div>
+
+      <div class="button-container">
+        <button class="proceed-button" onclick="proceedBooking()">Proceed</button>
+      </div>
+      <div class="table-container">
+        <table id="bookingTable"></table>
+      </div>
+    </div> <!--end div legend-->
+
+  </div><!-- End Section Title -->
+
+</section><!-- /Services Section -->
+
+
     <!-- About Section -->
     <section id="about" class="about section">
 
@@ -420,106 +522,6 @@
 
     </section><!-- /Services Section -->
 
-<!-- Portfolio Section  book now section-->
-<section id="portfolio" class="portfolio section">
-
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Bookings</h2>
-    <p>Choose your preferred way of Booking</p>
-
-    <div class="booking-button-container">
-      <button class="booking-button" id="booking-request" onclick="bookingOptions('booking-request-parent')">Create Booking Request</button>
-      <button class="booking-button" id="see-chart" onclick="bookingOptions('legend')">See Availability Chart</button>
-      <button class="booking-button" id="book-equipment">Book Equipment Only</button>
-    </div>
-
-    <!--Booking Request Forms -->
-    <div class="col-lg-8 booking-request-parent hideBookingoption" id="booking-request-parent">
-      <form class="php-email-form" id="booking-request-form">
-        <div class="row gy-4">
-
-          <div class="col-md-6">
-            <label for="bookingFor">Booking For</label>
-            <select name="bookingFor" class="form-control" required>
-              <option value="M" selected>Male</option>
-              <option value="F">Female</option>
-            </select>
-          </div>
-
-          <div class="col-md-6">
-            <label for="name">Your Name</label>
-            <input type="text" name="name" class="form-control" required>
-          </div>
-
-          <div class="col-md-6">
-            <label for="email">Email</label>
-            <input type="email" name="email" class="form-control" required>
-          </div>
-
-          <div class="col-md-6">
-            <label for="mobile">Mobile No</label>
-            <input type="text" name="mobile" class="form-control" required>
-          </div>
-
-          <div class="col-md-6">
-            <label for="dateFieldFrom" class="form-label">From Date</label>
-            <input type="date" name="From Date" class="form-control" id="dateFieldFrom" required>
-          </div>
-
-          <div class="col-md-6">
-            <label for="dateFieldTo" class="form-label">To Date</label>
-            <input type="date" name="To Date" class="form-control" id="dateFieldTo" required>
-          </div>
-
-          <div class="col-md-6">
-            <label for="timeSelect">Select Time</label>
-            <select id="timeSelect" name="time" class="form-control" required></select>
-          </div>
-
-          <div class="col-md-12">
-            <label for="teamMembers">Team Members Name</label>
-            <textarea name="teamMembers" class="form-control" required></textarea>
-          </div>
-
-          <div class="col-md-12 text-center">
-            <button type="submit">Create Booking</button>
-          </div>
-
-        </div>
-      </form>
-    </div> <!-- End booking request Form -->
-
-    <!--availability Chart-->
-    <div class="legend hideBookingoption" id="legend">
-      <div class="legend-item">
-        <div class="color-box green"></div>
-        <span>Available</span>
-      </div>
-      <div class="legend-item">
-        <div class="color-box blue"></div>
-        <span>Booked (Male)</span>
-      </div>
-      <div class="legend-item">
-        <div class="color-box pink"></div>
-        <span>Booked (Female)</span>
-      </div>
-      <div class="legend-item">
-        <div class="color-box yellow"></div>
-        <span>Selected Now</span>
-      </div>
-
-      <div class="button-container">
-        <button class="proceed-button" onclick="proceedBooking()">Proceed</button>
-      </div>
-      <div class="table-container">
-        <table id="bookingTable"></table>
-      </div>
-    </div> <!--end div legend-->
-
-  </div><!-- End Section Title -->
-
-</section><!-- /Services Section -->
 
    
 

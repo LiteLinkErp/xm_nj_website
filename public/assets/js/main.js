@@ -488,7 +488,7 @@ function bookingOptions(pId){
         const expendBtn = document.createElement('button');
         //expendBtn.textContent = 'Click Me';
         expendBtn.id = 'expendBtn';
-        expendBtn.innerHTML = '&#x2b;'
+        expendBtn.innerHTML = '<i class="fas fa-expand-alt"></i>'
         const expendth = document.createElement('th');
         expendth.appendChild(expendBtn) ;
         headerRow.appendChild(expendth); // Empty cell for row header

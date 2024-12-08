@@ -4,7 +4,7 @@ Customize functions for xtreme padel zambia
 
 function expandTable(){
   const expendBtn = document.getElementById('expendBtn');
-  const myDiv     = document.getElementById('bookingTable');
+  const myDiv     = document.getElementById('tableContainer');
   const icon      =  expendBtn.querySelector('i');
   if (icon.classList.contains('fa-arrows-alt')) {
     myDiv.classList.add('table-on-top');

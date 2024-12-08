@@ -2,18 +2,18 @@
 Customize functions for xtreme padel zambia
 */
 
-function expandTable(pAtion){
+function expandTable{
   const expendBtn = document.getElementById('expendBtn');
   const myDiv     = document.getElementById('bookingTable');
   const icon      =  expendBtn.querySelector('i');
-  if (pAtion == 'E'){
+  if (icon.classList.contains('fa-arrows-alt')) {
     myDiv.classList.add('table-on-top');
-    icon.classList.remove('fa-expand-alt');
+    icon.classList.remove('fa fa-arrows-alt');
     icon.classList.add('fa-arrow-circle-left');
 
   }else {
     myDiv.classList.remove('table-on-top');
-    icon.classList.add('fa-expand-alt');
+    icon.classList.add('fa fa-arrows-alt');
     icon.classList.remove('fa-arrow-circle-left');
   }
   
@@ -505,9 +505,9 @@ function bookingOptions(pId){
         const expendBtn = document.createElement('button');
         //expendBtn.textContent = 'Click Me';
         expendBtn.id = 'expendBtn';
-        expendBtn.innerHTML = '<i class="fas fa-expand-alt"></i>'
+        expendBtn.innerHTML = '<i class="fa fa-arrows-alt"></i>'
         expendBtn.onclick = function () {
-          expandTable('E');
+          expandTable();
         };
 
         const expendth = document.createElement('th');

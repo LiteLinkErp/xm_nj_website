@@ -2,7 +2,7 @@
 Customize functions for xtreme padel zambia
 */
 
-function expandTable{
+function expandTable(){
   const expendBtn = document.getElementById('expendBtn');
   const myDiv     = document.getElementById('bookingTable');
   const icon      =  expendBtn.querySelector('i');

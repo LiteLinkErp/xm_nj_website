@@ -8,12 +8,12 @@ function expandTable(){
   const icon      =  expendBtn.querySelector('i');
   if (icon.classList.contains('fa-arrows-alt')) {
     myDiv.classList.add('table-on-top');
-    icon.classList.remove('fa fa-arrows-alt');
+    icon.classList.remove('fa-arrows-alt');
     icon.classList.add('fa-arrow-circle-left');
 
   }else {
     myDiv.classList.remove('table-on-top');
-    icon.classList.add('fa fa-arrows-alt');
+    icon.classList.add('fa-arrows-alt');
     icon.classList.remove('fa-arrow-circle-left');
   }
   

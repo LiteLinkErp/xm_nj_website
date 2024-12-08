@@ -74,7 +74,7 @@
               <button class="proceed-button" onclick="goTohome()">Back</button>
           </div>
           <div class="button-container">
-            <button class="proceed-button" onclick="proceedBooking()">Confirm Booking</button>
+            <button class="proceed-button" onclick="displayBookings()">Next >></button>
         </div>
           </ol>
         </nav>
@@ -154,6 +154,13 @@
 
     </section><!-- /Blog Posts Section -->
 
+  <!-- Section Booking Summary -->
+  <section id="booking-Summary" class="booking-Summary">
+  <div class="bookingSummaryContainer" style="display: none;">
+  </div>
+  </section><!--End Section Booking summary -->
+
+
   </main>
 
   <footer id="footer" class="footer dark-background">
@@ -214,6 +221,53 @@ if (selectedBookings) {
             window.location.href = 'index.html';
         }
  
+  function displayBookings() {
+
+    const container = document.getElementById('bookingSummaryContainer');
+    container.setAttribute('display','flex');
+    // Clear the container before rendering to avoid duplicates
+    container.innerHTML = '';
+
+    // Parse localStorage data
+    const data = JSON.parse(localStorage.getItem('selectedBookings')) || {};
+    
+    // Create a table element
+    const table = document.createElement('table');
+    table.setAttribute('border', '1');
+    table.style.borderCollapse = 'collapse';
+    table.style.width = '100%';
+
+    // Create table header
+    const thead = document.createElement('thead');
+    thead.innerHTML = `
+        <tr>
+            <th style="padding: 8px;">Booking Date</th>
+            <th style="padding: 8px;">Booking Time</th>
+            <th style="padding: 8px;">Court No</th>
+        </tr>
+    `;
+    table.appendChild(thead);
+
+    // Create table body
+    const tbody = document.createElement('tbody');
+    Object.keys(data).forEach(key => {
+        const booking = data[key];
+        
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td style="padding: 8px;">${new Date(booking.bookingDate).toLocaleDateString()}</td>
+            <td style="padding: 8px;">${booking.bookingTime}</td>
+            <td style="padding: 8px;">${booking.courtNo}</td>
+        `;
+        tbody.appendChild(tr);
+    });
+
+    table.appendChild(tbody);
+
+    // Append table to the container div
+    container.appendChild(table);
+}
+
 
   </script>
 

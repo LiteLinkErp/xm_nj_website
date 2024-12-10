@@ -71,7 +71,7 @@
         <nav class="breadcrumbs">
           <ol>
             <div class="button-container">
-              <button class="proceed-button" onclick="goTohome()">Back</button>
+              <button class="proceed-button" onclick="goTohome()"><< Back</button>
           </div>
           <div class="button-container">
             <button class="proceed-button" onclick="displayBookings()">Next >></button>
@@ -220,11 +220,15 @@ if (selectedBookings) {
         function goTohome() {
             window.location.href = 'index.html';
         }
- 
+  
+  //===================================================
+ // Display Booking Summary for user confirmation 
+ //====================================================
+
   function displayBookings() {
 
     const container = document.getElementById('bookingSummaryContainer');
-    container.setAttribute('display','flex');
+    container.style.display = 'flex';
     // Clear the container before rendering to avoid duplicates
     container.innerHTML = '';
 

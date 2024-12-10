@@ -602,6 +602,22 @@ h6 {
   position: relative;
 }
 
+#bookingSummary-main.page-title {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 70px 0 00px 0;
+  text-align: center;
+  position: relative;
+}
+
+#bookingSummary-main..page-title h1 {
+ 
+  font-weight: 700;
+  margin-bottom: 10px;
+}
 .page-title:before {
   content: "";
   background-color: color-mix(in srgb, var(--background-color), transparent 50%);

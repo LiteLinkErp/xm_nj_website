@@ -602,10 +602,8 @@ h6 {
   position: relative;
 }
 
-#bookingSummary-main .page-title.dark-background {
-  
+ .page-title {
   padding: 70px 0 20px 0 !important;
-
 }
 #bookingSummary-main h1 {
   font-size: 30px;

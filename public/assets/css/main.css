@@ -605,10 +605,12 @@ h6 {
  .page-title.booking-heading {
   padding: 70px 0 20px 0 !important;
 }
-#bookingSummary-main h1 {
+
+.booking-heading h1 {
   font-size: 30px;
   font-weight: 500;
   margin-bottom: 10px;
+  color: aqua;
 }
 
 .page-title:before {

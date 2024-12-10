@@ -71,11 +71,18 @@
         <nav class="breadcrumbs">
           <ol>
             <div class="button-container">
-              <button class="proceed-button" onclick="goTohome()"><< Back</button>
+              <button class="proceed-button" id="btn-go-home"onclick="goTohome()"><< Back</button>
           </div>
           <div class="button-container">
-            <button class="proceed-button" onclick="displayBookings()">Next >></button>
+            <button class="proceed-button" id="btn-display-booking"onclick="showHideBookingSummary('s')">Next >></button>
         </div>
+
+        <div class="button-container">
+          <button class="proceed-button" id="btn-hide-summary" onclick="showHideBookingSummary('h')" style="display:none"><< Back</button>
+      </div>
+      <div class="button-container">
+        <button class="proceed-button" id="btn-booking-confirm" onclick="confirmBooking()" style="display:none">Confirm >></button>
+    </div>
           </ol>
         </nav>
       </div>
@@ -225,11 +232,40 @@ if (selectedBookings) {
  // Display Booking Summary for user confirmation 
  //====================================================
 
-  function displayBookings() {
-    const  extraSection = document.getElementById('blog-posts'); 
-    const  container = document.getElementById('bookingSummaryContainer');
-    container.style.display = 'flex';
-    extraSection.style.display = 'none';
+  function showHideBookingSummary(p_action) {
+
+    const  extraSection              = document.getElementById('blog-posts'); 
+    const  bookingSummaryContainer   = document.getElementById('bookingSummaryContainer');
+
+    const  btnHideSummary   = document.getElementById('btn-hide-summary'); 
+    const  btnBookinConfirm = document.getElementById('btn-boooking-confirm');
+
+    const  btnDisplayBooking   = document.getElementById('btn-display-booking'); D
+    const  btnGoHome           = document.getElementById('btn-go-home');
+
+    if (p_action == 's')
+    {
+      bookingSummaryContainer.style.display = 'flex';
+      extraSection.style.display = 'none';
+
+      btnHideSummary.style.display = 'flex';
+      btnBookinConfirm.style.display = 'flex';
+
+      btnDisplayBooking.style.display = 'none';
+      btnGoHome.style.display = 'none';
+    }
+    else{
+      bookingSummaryContainer.style.display = 'none';
+      extraSection.style.display = 'flex';
+
+      btnHideSummary.style.display = 'none';
+      btnBookinConfirm.style.display = 'none';
+
+      btnDisplayBooking.style.display = 'flex';
+      btnGoHome.style.display = 'flex';
+    }
+
+    
 
     // Clear the container before rendering to avoid duplicates
     container.innerHTML = '';

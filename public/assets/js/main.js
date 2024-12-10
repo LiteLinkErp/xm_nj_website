@@ -45,7 +45,10 @@ function expandTable(){
       window.selectedBookings = [];
   }
     if (window.selectedBookings.length === 0){
-      alert('Please select date and time')
+      alertify.alert("Error", 'Please select Date, Time and Court', function() {
+        
+      });
+  
     }else {
       localStorage.setItem('selectedBookings', JSON.stringify(window.selectedBookings));
       window.location.href = 'equipment.html';

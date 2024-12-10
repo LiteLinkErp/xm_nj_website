@@ -226,9 +226,11 @@ if (selectedBookings) {
  //====================================================
 
   function displayBookings() {
-
-    const container = document.getElementById('bookingSummaryContainer');
+    const  extraSection == document.getElementById('blog-posts'); 
+    const  container = document.getElementById('bookingSummaryContainer');
     container.style.display = 'flex';
+    extraSection.style.display = 'none';
+    
     // Clear the container before rendering to avoid duplicates
     container.innerHTML = '';
 

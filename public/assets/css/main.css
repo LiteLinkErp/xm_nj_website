@@ -602,7 +602,7 @@ h6 {
   position: relative;
 }
 
-#bookingSummary-main .page-title {
+#bookingSummary-main .page-title.dark-background {
   
   padding: 70px 0 20px 0 !important;
 

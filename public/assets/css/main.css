@@ -607,10 +607,10 @@ h6 {
 }
 
 .booking-heading h1 {
-  font-size: 30px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  color: aqua;
+  font-size: 30px  !important;
+  font-weight: 500  !important;
+  margin-bottom: 10px  !important;
+  color: aqua  !important;
 }
 
 .page-title:before {

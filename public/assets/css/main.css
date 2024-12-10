@@ -602,7 +602,7 @@ h6 {
   position: relative;
 }
 
-#bookingSummary-main.page-title {
+#bookingSummary-main .page-title {
   color: var(--default-color);
   background-color: var(--background-color);
   background-size: cover;
@@ -613,7 +613,7 @@ h6 {
   position: relative;
 }
 
-#bookingSummary-main..page-title h1 {
+#bookingSummary-main .page-title h1 {
  
   font-weight: 700;
   margin-bottom: 10px;

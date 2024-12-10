@@ -268,7 +268,7 @@ if (selectedBookings) {
     
 
     // Clear the container before rendering to avoid duplicates
-    container.innerHTML = '';
+    bookingSummaryContainer.innerHTML = '';
 
     // Parse localStorage data
     const data = JSON.parse(localStorage.getItem('selectedBookings')) || {};
@@ -307,7 +307,7 @@ if (selectedBookings) {
     table.appendChild(tbody);
 
     // Append table to the container div
-    container.appendChild(table);
+    bookingSummaryContainer.appendChild(table);
 }
 
 

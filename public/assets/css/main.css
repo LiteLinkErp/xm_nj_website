@@ -2761,6 +2761,10 @@ section,
   margin-right: 6px;
   accent-color: #fff; /* Changes the selection dot to white */
 }
+.radio-option span
+{color: white;
+  font-size: large;
+  font-weight: 600;}
 
 /* Hover effects */
 .radio-option:hover {

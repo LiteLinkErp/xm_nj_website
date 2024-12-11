@@ -1,7 +1,7 @@
 /*
 Customize functions for xtreme padel zambia
 */
-resetSlotSelection(){
+function resetSlotSelection(){
   return;
 }
 function expandTable(){

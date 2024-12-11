@@ -257,11 +257,11 @@ function getDaySuffix(n) {
 }
 
 function formatTime(bookingTime) {
-    const [hours, minutes] = bookingTime.split(':').map(Number);
-    const timeStr = hours >= 12
-        ? `${hours > 12 ? hours - 12 : hours}:${minutes.toString().padStart(2, '0')} PM`
-        : `${hours}:${minutes.toString().padStart(2, '0')} AM`;
-
+   
+    let timeStr ;
+   
+      timeStr = bookingTime+ ' Hrs'
+  
     return timeStr;
 }
 

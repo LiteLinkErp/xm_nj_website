@@ -222,18 +222,19 @@
         <div class="color-box yellow"></div>
         <span>Selected Now</span>
       </div>
-      <div class="booking-for">
-        <label for="quantity" class="quantity-label">Booking For:</label>
-                <select id="slot-booking-for" class="booking-for"onChange="resetSlotSelection()">
-                    <option value="0" selected>Select</option>
-                    <option value="M">Male</option>
-                    <option value="F">Female</option>
-                </select>
-      </div>
+      
       <div class="button-container">
         <button class="proceed-button" onclick="proceedBooking()">Proceed>></button>
       </div>
       <div class="table-container" id="tableContainer">
+        <div class="booking-for">
+          <label for="quantity" class="quantity-label">Booking For:</label>
+                  <select id="slot-booking-for" class="booking-for"onChange="resetSlotSelection()">
+                      <option value="0" selected>Select</option>
+                      <option value="M">Male</option>
+                      <option value="F">Female</option>
+                  </select>
+        </div>
         <table id="bookingTable"></table>
       </div>
     </div> <!--end div legend-->

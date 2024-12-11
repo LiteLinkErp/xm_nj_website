@@ -1,7 +1,9 @@
 /*
 Customize functions for xtreme padel zambia
 */
-
+resetSlotSelection(){
+  return;
+}
 function expandTable(){
   const expendBtn = document.getElementById('expendBtn');
   const myDiv     = document.getElementById('tableContainer');

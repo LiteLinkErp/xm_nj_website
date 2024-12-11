@@ -527,7 +527,7 @@ function bookingOptions(pId){
         times.forEach(time => {
             const row = document.createElement('tr');
             const timeCell = document.createElement('td');
-            timeCell.textContent = time;
+            timeCell.textContent = time+':00 Hrs';
             row.appendChild(timeCell);
 
             // Create cells for each date

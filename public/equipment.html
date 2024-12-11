@@ -231,7 +231,43 @@ if (selectedBookings) {
   //===================================================
  // Display Booking Summary for user confirmation 
  //====================================================
+ 
+ function getFormattedDate(date) {
+    const days = [
+        "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+    ];
+    
+    const d = new Date(date);
+    const dayName = days[d.getDay()];
+    const dateNum = d.getDate();
+    const monthName = d.toLocaleString('default', { month: 'long' });
 
+    const suffix = getDaySuffix(dateNum);
+    return `${dayName}-${dateNum}${suffix} ${monthName}`;
+}
+
+function getDaySuffix(n) {
+    if (n >= 11 && n <= 13) return 'th';
+    switch (n % 10) {
+        case 1: return 'st';
+        case 2: return 'nd';
+        case 3: return 'rd';
+        default: return 'th';
+    }
+}
+
+function formatTime(bookingTime) {
+    const [hours, minutes] = bookingTime.split(':').map(Number);
+    const timeStr = hours >= 12
+        ? `${hours > 12 ? hours - 12 : hours}:${minutes.toString().padStart(2, '0')} PM`
+        : `${hours}:${minutes.toString().padStart(2, '0')} AM`;
+
+    return timeStr;
+}
+
+//=====================================
+//
+//=========================================
   function showHideBookingSummary(p_action) {
 
     const  extraSection              = document.getElementById('blog-posts'); 
@@ -297,10 +333,10 @@ if (selectedBookings) {
         
         const tr = document.createElement('tr');
         tr.innerHTML = `
-            <td style="padding: 8px;">${new Date(booking.bookingDate).toLocaleDateString()}</td>
-            <td style="padding: 8px;">${booking.bookingTime}</td>
-            <td style="padding: 8px;">${booking.courtNo}</td>
-        `;
+    <td style="padding: 8px;">${getFormattedDate(booking.bookingDate)}</td>
+    <td style="padding: 8px;">${formatTime(booking.bookingTime)}</td>
+    <td style="padding: 8px;">${booking.courtNo}</td>
+`;
         tbody.appendChild(tr);
     });
 

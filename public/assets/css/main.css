@@ -2720,3 +2720,68 @@ section,
     height: 100vh !important;
     z-index: 9999 !important;
 }
+
+
+/* Container Styling */
+.booking-for {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 8px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Label Styling */
+.slot-booking-for {
+  font-size: 1rem;
+  color: #fff;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* Select List Styling */
+.booking-for select {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+/* Select hover effect */
+.booking-for select:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .booking-for {
+    justify-content: flex-start;
+  }
+
+  .quantity-label {
+    font-size: 0.9rem;
+  }
+
+  .booking-for select {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quantity-label {
+    font-size: 0.8rem;
+  }
+
+  .booking-for select {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+}

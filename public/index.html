@@ -738,14 +738,16 @@
 
 document.querySelector("table").addEventListener("click", function (event) {
     const clickedDiv = event.target;
-    // Ensure use has selected booked for Male or Female
 
+    // Ensure use has selected booked for Male or Female
     const selectedValue = document.querySelector('input[name="bookingFor"]:checked');
      if ( selectedValue === null){
          alertify.alert("Error", 'Please select Booking For Male or Female.', function() {return; })
+         return;
      }
 
-
+    console.log(selectedValue.value);
+    
     // Ensure the clicked element is a div within the table
     if (!clickedDiv.classList.contains("bookedfor-null") &&
         !clickedDiv.classList.contains("bookedfor-M") &&

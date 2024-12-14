@@ -266,7 +266,7 @@ function expandTable(){
       return;
     }
 
-     bookingData = { items: bookingData }; 
+     bookingData = { bookingData }; 
      
     console.log(JSON.stringify(bookingData, null, 2));
 
@@ -284,7 +284,7 @@ function expandTable(){
                 body: JSON.stringify(bookingData, null, 2), // Pass data as JSON
             }
         );
-        console.log(response);
+        
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }

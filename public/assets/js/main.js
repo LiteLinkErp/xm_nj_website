@@ -49,6 +49,7 @@ function expandTable(){
      const selectedValue = document.querySelector('input[name="bookingFor"]:checked');
      if ( selectedValue === null){
          alertify.alert("Error", 'Please select Booking For Male or Female.', function() {})
+         return
      }
 
      if (window.selectedBookings.length === 0 || selectedValue === null){
@@ -219,6 +220,74 @@ function expandTable(){
         });
         form.reset();
 
+    } catch (error) {
+        console.error('Error submitting enquiry:', error);
+        alertify.error('Failed to submit enquiry. Please try again.');
+    }
+  }
+
+  //==================================================================
+  // Validate booking data and confirm Booking Function===============
+  //==================================================================
+
+  function validateBookings(data) {
+    // Ensure data is an array; if it's not, return false
+    if (!Array.isArray(data)) {
+      return false;
+    }
+  
+    // Loop through each entry and validate the fields
+    for (const booking of data) {
+      if (
+        !booking.bookingDate ||
+        !booking.bookingFor ||
+        !booking.bookingTime ||
+        !booking.courtNo
+      ) {
+        return false; // If any of these fields are missing or empty, return false
+      }
+    }
+  
+    return true; // If all checks pass, return true
+  }
+
+  async function confirmBooking(event) {
+   
+    event.preventDefault(); // Prevent the default form submission behavior
+  
+    const data = JSON.parse(localStorage.getItem('selectedBookings')) || {};
+    
+    // Call the validation function
+    if (validateBookings(data)) {
+      console.log('All bookings have valid attributes and values');
+    } else {
+      console.log('Some bookings are missing required fields or have invalid values');
+      return;
+    }
+   
+
+    try {
+        const response = await fetch(
+            'https://g0f64e949e59aa7-tbsdb20210810.adb.ap-mumbai-1.oraclecloudapps.com/ords/triopexb/xpbooking/saveslotbooking',
+            {
+                method: 'POST', // HTTP method
+                headers: {
+                  'Access-Control-Allow-Origin' : '*', // Or a specific origin
+                  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS', // Allowed methods
+                  'Access-Control-Allow-Headers': 'Content-Type, Authorization', // Allowed headers
+                  'Content-Type'                : 'application/json', // Define JSON payload
+                },
+                body: JSON.stringify(data), // Pass data as JSON
+            }
+        );
+  
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+  
+        const data = await response.json();
+        alertify.success('Enquiry submitted successfully!');
+        form.reset();
     } catch (error) {
         console.error('Error submitting enquiry:', error);
         alertify.error('Failed to submit enquiry. Please try again.');

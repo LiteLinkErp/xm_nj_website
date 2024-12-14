@@ -265,7 +265,7 @@ function expandTable(){
       console.log('Some bookings are missing required fields or have invalid values');
       return;
     }
-    bookingData = ('{"items":'+bookingData+'}')
+    bookingData = '{"items":'+JSON.stringify(bookingData)+'}'
     console.log(bookingData);
 
     try {

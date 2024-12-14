@@ -255,10 +255,10 @@ function expandTable(){
    
     //event.preventDefault(); // Prevent the default form submission behavior
   
-    const data = JSON.parse(localStorage.getItem('selectedBookings')) || {};
+    const bookingData = JSON.parse(localStorage.getItem('selectedBookings')) || {};
     
     // Call the validation function
-    if (validateBookings(data)) {
+    if (validateBookings(bookingData)) {
       console.log('All bookings have valid attributes and values');
     } else {
       console.log('Some bookings are missing required fields or have invalid values');
@@ -277,7 +277,7 @@ function expandTable(){
                   'Access-Control-Allow-Headers': 'Content-Type, Authorization', // Allowed headers
                   'Content-Type'                : 'application/json', // Define JSON payload
                 },
-                body: JSON.stringify(data), // Pass data as JSON
+                body: JSON.stringify(bookingData), // Pass data as JSON
             }
         );
   

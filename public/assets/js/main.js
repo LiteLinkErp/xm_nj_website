@@ -46,7 +46,12 @@ function expandTable(){
     if (!window.selectedBookings) {
       window.selectedBookings = [];
   }
-    if (window.selectedBookings.length === 0){
+  const selectedValue = document.querySelector('input[name="bookingFor"]:checked');
+     if ( selectedValue === null){
+         alertify.alert("Error", 'Please select Booking For Male or Female.', function() { })
+     }
+
+     if (window.selectedBookings.length === 0){
       alertify.alert("Error", 'Please select Date, Time and Court', function() {
         
       });

@@ -266,8 +266,8 @@ function expandTable(){
       return;
     }
     
-    bookingData = JSON.stringify(bookingData)
     console.log(bookingData);
+    
     try {
         const response = await fetch(
             'https://g0f64e949e59aa7-tbsdb20210810.adb.ap-mumbai-1.oraclecloudapps.com/ords/triopexb/xpbooking/saveslotbooking',

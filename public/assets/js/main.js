@@ -48,7 +48,7 @@ function expandTable(){
   }
   const selectedValue = document.querySelector('input[name="bookingFor"]:checked');
      if ( selectedValue === null){
-         alertify.alert("Error", 'Please select Booking For Male or Female.', function() { })
+         alertify.alert("Error", 'Please select Booking For Male or Female.', function() {return;})
      }
 
      if (window.selectedBookings.length === 0){

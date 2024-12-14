@@ -209,8 +209,8 @@ function expandTable(){
                 }), // Pass data as JSON
             }
         );
-       console.log(response);
        
+
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -281,7 +281,7 @@ function expandTable(){
                 body: (bookingData), // Pass data as JSON
             }
         );
-  
+        console.log(response);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }

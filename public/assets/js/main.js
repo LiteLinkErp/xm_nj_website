@@ -290,8 +290,9 @@ function expandTable(){
         }
   
         const data = await response.json();
-        alertify.success('Enquiry submitted successfully!');
-        form.reset();
+        alertify.alert("Booking Order No ", data.response, function() {
+        alertify.success("Thank You.");
+        });
     } catch (error) {
         console.error('Error submitting enquiry:', error);
     

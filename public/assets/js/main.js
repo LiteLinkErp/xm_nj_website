@@ -266,8 +266,8 @@ function expandTable(){
       return;
     }
     
-    console.log(bookingData);
-    
+    console.log(JSON.stringify(bookingData));
+
     try {
         const response = await fetch(
             'https://g0f64e949e59aa7-tbsdb20210810.adb.ap-mumbai-1.oraclecloudapps.com/ords/triopexb/xpbooking/saveslotbooking',
@@ -279,7 +279,7 @@ function expandTable(){
                   'Access-Control-Allow-Headers': 'Content-Type, Authorization', // Allowed headers
                   'Content-Type'                : 'application/json', // Define JSON payload
                 },
-                body: bookingData, // Pass data as JSON
+                body: '', // Pass data as JSON
             }
         );
         console.log(response);

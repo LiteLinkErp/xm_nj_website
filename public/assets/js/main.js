@@ -291,7 +291,11 @@ function expandTable(){
   
         const data = await response.json();
         alertify.alert("Booking Order No ", data.response, function() {
+        if (localStorage.getItem('selectedBookings')) {
+            localStorage.removeItem('selectedBookings');
+        }
         alertify.success("Thank You.");
+        window.location.href = 'index.html';
         });
     } catch (error) {
         console.error('Error submitting enquiry:', error);

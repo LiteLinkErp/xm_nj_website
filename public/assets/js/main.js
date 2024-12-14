@@ -265,7 +265,7 @@ function expandTable(){
       console.log('Some bookings are missing required fields or have invalid values');
       return;
     }
-    bookingData = JSON.stringify('{"items":'+bookingData+'}')
+    bookingData = ('{"items":'+bookingData+'}')
     console.log(bookingData);
 
     try {
@@ -279,7 +279,7 @@ function expandTable(){
                   'Access-Control-Allow-Headers': 'Content-Type, Authorization', // Allowed headers
                   'Content-Type'                : 'application/json', // Define JSON payload
                 },
-                body: '', // Pass data as JSON
+                body: bookingData, // Pass data as JSON
             }
         );
         console.log(response);

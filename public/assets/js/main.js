@@ -256,7 +256,7 @@ function expandTable(){
    
     //event.preventDefault(); // Prevent the default form submission behavior
   
-    const bookingData = JSON.parse(localStorage.getItem('selectedBookings')) || {};
+    let bookingData = JSON.parse(localStorage.getItem('selectedBookings')) || {};
     
     // Call the validation function
     if (validateBookings(bookingData)) {

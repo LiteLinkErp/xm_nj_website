@@ -268,7 +268,7 @@ function expandTable(){
 
      bookingData = { items: bookingData }; 
      
-    console.log(bookingData);
+    console.log(JSON.stringify(bookingData, null, 2));
 
     try {
         const response = await fetch(

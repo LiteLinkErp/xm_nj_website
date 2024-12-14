@@ -265,8 +265,9 @@ function expandTable(){
       console.log('Some bookings are missing required fields or have invalid values');
       return;
     }
-   
-
+    
+    bookingData = JSON.stringify(bookingData)
+    console.log(bookingData);
     try {
         const response = await fetch(
             'https://g0f64e949e59aa7-tbsdb20210810.adb.ap-mumbai-1.oraclecloudapps.com/ords/triopexb/xpbooking/saveslotbooking',
@@ -291,7 +292,7 @@ function expandTable(){
         form.reset();
     } catch (error) {
         console.error('Error submitting enquiry:', error);
-        alertify.error('Failed to submit enquiry. Please try again.');
+    
     }
   }
 

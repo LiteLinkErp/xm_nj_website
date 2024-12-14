@@ -278,7 +278,7 @@ function expandTable(){
                   'Access-Control-Allow-Headers': 'Content-Type, Authorization', // Allowed headers
                   'Content-Type'                : 'application/json', // Define JSON payload
                 },
-                body: (bookingData), // Pass data as JSON
+                body: JSON.stringify(bookingData), // Pass data as JSON
             }
         );
         console.log(response);

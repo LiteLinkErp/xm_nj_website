@@ -251,9 +251,9 @@ function expandTable(){
     return true; // If all checks pass, return true
   }
 
-  async function confirmBooking(event) {
+  async function confirmBooking() {
    
-    event.preventDefault(); // Prevent the default form submission behavior
+    //event.preventDefault(); // Prevent the default form submission behavior
   
     const data = JSON.parse(localStorage.getItem('selectedBookings')) || {};
     

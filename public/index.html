@@ -747,7 +747,7 @@ document.querySelector("table").addEventListener("click", function (event) {
      }
 
     console.log(selectedValue.value);
-    
+
     // Ensure the clicked element is a div within the table
     if (!clickedDiv.classList.contains("bookedfor-null") &&
         !clickedDiv.classList.contains("bookedfor-M") &&
@@ -773,6 +773,7 @@ document.querySelector("table").addEventListener("click", function (event) {
             bookingDate: clickedDiv.getAttribute("data-booking-date"),
             bookingTime: clickedDiv.getAttribute("data-booking-time"),
             courtNo: clickedDiv.getAttribute("data-court-no"),
+            bookingFor: selectedValue.value
         };
 
         // Add class `selected-now` to the div
@@ -792,7 +793,7 @@ document.querySelector("table").addEventListener("click", function (event) {
         // Remove the corresponding booking data from the JSON variable
         const bookingDate = clickedDiv.getAttribute("data-booking-date");
         const bookingTime = clickedDiv.getAttribute("data-booking-time");
-        const courtNo = clickedDiv.getAttribute("data-court-no");
+        const courtNo     = clickedDiv.getAttribute("data-court-no");
 
         window.selectedBookings = window.selectedBookings.filter(
             (booking) =>

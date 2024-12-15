@@ -2733,7 +2733,8 @@ section,
 /* Container Styling */
 .booking-for {
   display: flex;
-  flex-direction: column;
+  flex-direction: inherit;
+  align-items: center;
   padding: 10px;
   background: linear-gradient(to right, #6a11cb, #2575fc);
   border-radius: 8px;
@@ -2746,6 +2747,7 @@ section,
   color: #fff;
   margin-bottom: 8px;
   font-weight: bold;
+  padding-top: inherit;
 }
 
 /* Radio Group */
@@ -2753,6 +2755,7 @@ section,
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  padding-left: 12px;
 }
 
 /* Radio Option Style */

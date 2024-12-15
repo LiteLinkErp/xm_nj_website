@@ -739,7 +739,7 @@
 document.querySelector("table").addEventListener("click", function (event) {
     const clickedDiv = event.target;
 
-    console.log(clickedDiv);
+    
     if (!clickedDiv.classList.contains("court")){
       return;
     }
@@ -750,7 +750,7 @@ document.querySelector("table").addEventListener("click", function (event) {
          return;
      }
 
-    console.log(selectedValue.value);
+    
 
     // Ensure the clicked element is a div within the table
     if (!clickedDiv.classList.contains("bookedfor-null") &&
@@ -759,6 +759,18 @@ document.querySelector("table").addEventListener("click", function (event) {
         !clickedDiv.classList.contains("selected-now")) {
         return;
     }
+
+    // Check if sibling divs are booked of opposit sex
+    const sibling = clickedDiv.nextElementSibling || clickedDiv.previousElementSibling;
+    console.log(sibling);
+
+    if (sibling && sibling.classList.contains('bookedfor-M') && selectedValue.value === 'F') {
+      alert('This court is not available for Female');
+    } 
+    if (sibling && sibling.classList.contains('bookedfor-F') && selectedValue.value === 'M') {
+      alert('This court is not available for Male');
+    }
+
 
     // JSON variable to store selected divs' attributes
     if (!window.selectedBookings) {

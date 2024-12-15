@@ -69,7 +69,7 @@
     <!-- Page Title -->
     <div class="page-title dark-background booking-heading">
       <div class="container position-relative">
-        <h1>Do you want to enjoy some extras ..</h1>
+        <h1 id="h1Extra">Do you want to enjoy some extras ..</h1>
         
         <nav class="breadcrumbs">
           <ol>
@@ -321,6 +321,9 @@ function formatTime(bookingTime) {
     const  btnDisplayBooking   = document.getElementById('btn-display-booking'); 
     const  btnGoHome           = document.getElementById('btn-go-home');
 
+    const  h1Extra           = document.getElementById('h1Extra');
+    
+
     if (p_action == 's')
     {
       bookingSummaryContainer.style.display = 'inline-grid';
@@ -331,6 +334,7 @@ function formatTime(bookingTime) {
 
       btnDisplayBooking.style.display = 'none';
       btnGoHome.style.display = 'none';
+      h1Extra.style.display = 'none';
     }
     else{
       bookingSummaryContainer.style.display = 'none';
@@ -341,6 +345,7 @@ function formatTime(bookingTime) {
 
       btnDisplayBooking.style.display = 'flex';
       btnGoHome.style.display = 'flex';
+      h1Extra.style.display = 'flex';
     }
 
     

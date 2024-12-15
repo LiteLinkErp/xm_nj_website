@@ -2808,4 +2808,10 @@ section,
   height: 30px;
   width: 30px;
 }
-
+.dv-custom-checkbox{
+  display: flex;
+  align-items: center;
+}
+.sp-custom-checkbox{
+  margin-left: 10px;
+}

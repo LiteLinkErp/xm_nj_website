@@ -2,7 +2,12 @@
 Customize functions for xtreme padel zambia
 */
 function resetSlotSelection(){
-  return;
+    document.querySelectorAll('.selected-now').forEach(div => {
+    div.classList.remove('selected-now');
+  });
+  if (localStorage.getItem('selectedBookings')) {
+    localStorage.removeItem('selectedBookings');
+}
 }
 function expandTable(){
   const expendBtn = document.getElementById('expendBtn');

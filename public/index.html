@@ -765,10 +765,12 @@ document.querySelector("table").addEventListener("click", function (event) {
     console.log(sibling);
 
     if (sibling && sibling.classList.contains('bookedfor-M') && selectedValue.value === 'F') {
-      alert('This court is not available for Female');
+      alertify.error('This court is not available for Female');
+      return;
     } 
     if (sibling && sibling.classList.contains('bookedfor-F') && selectedValue.value === 'M') {
-      alert('This court is not available for Male');
+      alertify.error('This court is not available for Male');
+      return;
     }
 
 

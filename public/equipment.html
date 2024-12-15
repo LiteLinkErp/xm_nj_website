@@ -335,7 +335,11 @@ function formatTime(bookingTime) {
     
 
     // Clear the container before rendering to avoid duplicates
-    bookingSummaryContainer.innerHTML = '';
+    const existingtable = bookingSummaryContainer.querySelector('table');
+    if (existingtable) {
+      existingtable.remove();
+    }
+      
 
     // Parse localStorage data
     const data = JSON.parse(localStorage.getItem('selectedBookings')) || {};

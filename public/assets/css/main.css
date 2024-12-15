@@ -2683,6 +2683,7 @@ section,
     width: 100%;
     padding: 10px;
     margin: 10px;
+    background-color: aliceblue;
 }
 
 /* Make buttons responsive on mobile */
@@ -2787,6 +2788,7 @@ section,
       width: 34%;
       padding: 10px;
       margin: 10px;
+      background-color: aliceblue;
   }
 }
 

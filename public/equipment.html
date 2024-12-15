@@ -351,9 +351,10 @@ function formatTime(bookingTime) {
     
     // Create a table element
     const table = document.createElement('table');
-    table.setAttribute('border', '1');
+    table.setAttribute('border', '0');
     table.style.borderCollapse = 'collapse';
     table.style.width = '100%';
+    table.style.margin = '10px';
 
     // Create table header
     const thead = document.createElement('thead');

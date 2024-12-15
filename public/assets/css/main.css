@@ -2679,6 +2679,13 @@ section,
   background-color: #45a049;
 }
 
+#user-details-parent{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid green;
+    margin: 10px;
+}
+
 /* Make buttons responsive on mobile */
 @media (max-width: 600px) {
   .booking-button-container {
@@ -2791,9 +2798,3 @@ section,
   }
 }
 
-#user-details-parent{
-  width: 100%;
-    padding: 10px;
-    border: 1px solid green;
-    margin: 10px;
-}

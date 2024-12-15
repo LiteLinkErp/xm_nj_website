@@ -277,6 +277,20 @@ function expandTable(){
       return;
     }
 
+    /*Add more attribute to Booking data  */
+    // Add the attributes to each row
+      bookingData = bookingData.map(booking => ({
+        ...booking,
+        bookedBy: 'Manglu',
+        email: 'mtyagi84@gmail.com',
+        mobileNo: '8953589055',
+        teamMembers: 'fdghhjghjhkjhkh'
+      }));
+
+      // Save the updated data back to localStorage
+      localStorage.setItem('selectedBookings', JSON.stringify(bookingData));
+
+
      bookingData = { bookingData }; 
      
     console.log(JSON.stringify(bookingData, null, 2));

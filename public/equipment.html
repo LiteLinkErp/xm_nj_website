@@ -350,13 +350,8 @@ function formatTime(bookingTime) {
 
     
 
-    // Clear the container before rendering to avoid duplicates
-    const existingtable = bookingSummaryTable.querySelector('table');
-    if (existingtable) {
-      existingtable.remove();
-    }
-      
-    bookingSummaryContainer.innerHTML = '';
+    // Clear the container before rendering to avoid duplicates  
+    bookingSummaryTable.innerHTML = '';
     // Parse localStorage data
     const data = JSON.parse(localStorage.getItem('selectedBookings')) || {};
     
@@ -395,7 +390,7 @@ function formatTime(bookingTime) {
     table.appendChild(tbody);
 
     // Append table to the container div
-    bookingSummaryContainer.appendChild(table);
+    bookingSummaryTable.appendChild(table);
 
   //======================================
   //Create second tabl for equipment
@@ -427,7 +422,7 @@ function formatTime(bookingTime) {
       </tbody>
     `;
 
-    bookingSummaryContainer.appendChild(equipmentTable);
+    bookingSummaryTable.appendChild(equipmentTable);
 }
 
 //=====================================

@@ -2783,3 +2783,10 @@ section,
     font-size: 0.8rem;
   }
 }
+
+#user-details-parent{
+  width: 100%;
+    padding: 10px;
+    border: 1px solid green;
+    margin-bottom: 10px;
+}

@@ -5,10 +5,16 @@ function resetSlotSelection(){
     document.querySelectorAll('.selected-now').forEach(div => {
     div.classList.remove('selected-now');
   });
+  
+  if (window.selectedBookings && window.selectedBookings.length > 0) {
+      window.selectedBookings = [];
+  }
+
   if (localStorage.getItem('selectedBookings')) {
-    localStorage.removeItem('selectedBookings');
+      localStorage.removeItem('selectedBookings');
+  }
 }
-}
+
 function expandTable(){
   const expendBtn = document.getElementById('expendBtn');
   const myDiv     = document.getElementById('tableContainer');

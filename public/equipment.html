@@ -192,6 +192,12 @@
                               <label for="teamMembers">Team Members Name</label>
                               <textarea name="user_teamMembers" id="user_teamMembers" class="form-control" maxlength="500" required></textarea>
                             </div>
+
+                            <div class="col-md-12">
+                              <label for="user_bookingContinue">Keep My Booking going</label>
+                              <input type="checkbox" id="user_bookingContinue" checked> Checkbox
+                            </div>
+
                         </div>
                     </form>
             </div> <!-- End user details Form -->
@@ -397,12 +403,15 @@ function formatTime(bookingTime) {
     // Dynamically create the table
     const tableContainer = document.getElementById('tableContainer');
     const equipmentTable = document.createElement('table');
-    equipmentTable.border = '0';
+    equipmentTable.setAttribute('border', '0');
+    equipmentTable.style.borderCollapse = 'collapse';
+    equipmentTable.style.width = '100%';
+    equipmentTable.style.margin = '10px';
     equipmentTable.innerHTML = `
       <thead>
         <tr>
-          <th>Rented Ball Sets</th>
-          <th>Rented Padel Rackets</th>
+          <th>Ball Sets</th>
+          <th>Padel Rackets</th>
         </tr>
       </thead>
       <tbody>
@@ -412,7 +421,7 @@ function formatTime(bookingTime) {
         </tr>
       </tbody>
     `;
-    
+
     bookingSummaryTable.appendChild(equipmentTable);
 }
 

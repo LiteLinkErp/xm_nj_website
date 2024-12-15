@@ -740,7 +740,9 @@ document.querySelector("table").addEventListener("click", function (event) {
     const clickedDiv = event.target;
 
     console.log(clickedDiv);
-
+    if (!clickedDiv.classList.contains("court")){
+      return;
+    }
     // Ensure use has selected booked for Male or Female
     const selectedValue = document.querySelector('input[name="bookingFor"]:checked');
      if ( selectedValue === null){

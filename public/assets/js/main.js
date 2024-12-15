@@ -342,8 +342,8 @@ function expandTable(){
     const userEmail            = document.getElementById('user_email').value;
     const userMobile           = document.getElementById('user_mobile').value;
     const userTeamMembers      = document.getElementById('user_teamMembers').value;
-    
-  
+    const checkbox             = document.getElementById('user_bookingContinue');
+    let currentValue           = checkbox.checked ? 'Y' : 'N';
     let bookingData = JSON.parse(localStorage.getItem('selectedBookings')) || {};
     
     // Call the validation function
@@ -361,7 +361,8 @@ function expandTable(){
         bookedBy: userName,
         email: userEmail,
         mobileNo: userMobile,
-        teamMembers: userTeamMembers
+        teamMembers: userTeamMembers,
+        bookingContinue:currentValue
       }));
 
       // Save the updated data back to localStorage

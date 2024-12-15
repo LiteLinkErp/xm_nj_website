@@ -362,7 +362,7 @@ function expandTable(){
         email: userEmail,
         mobileNo: userMobile,
         teamMembers: userTeamMembers,
-        bookingContinue:currentValue
+        continuousBooking:currentValue
       }));
 
       // Save the updated data back to localStorage

@@ -736,8 +736,10 @@
   <script src="https://cdn.jsdelivr.net/npm/alertifyjs/build/alertify.min.js"></script>
   <script>
 
-document.querySelector(".my-class").addEventListener("click", function (event) {
+document.querySelector("table").addEventListener("click", function (event) {
     const clickedDiv = event.target;
+
+    console.log(clickedDiv);
 
     // Ensure use has selected booked for Male or Female
     const selectedValue = document.querySelector('input[name="bookingFor"]:checked');

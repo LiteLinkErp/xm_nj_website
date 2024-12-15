@@ -168,7 +168,7 @@
     
   <div class="bookingSummaryContainer" id ="bookingSummaryContainer"style="display: none;">
 
-    <div class="col-lg-8 booking-request-parent hideBookingoption" id="booking-request-parent">
+    <div class="col-lg-8 " id="user-details-parent">
       <form class="user-details-form" id="user-details-form">
         <div class="row gy-4">
 
@@ -337,7 +337,7 @@ function formatTime(bookingTime) {
     // Clear the container before rendering to avoid duplicates
     const existingtable = bookingSummaryContainer.querySelector('table');
     if (existingtable) {
-      //existingtable.remove();
+      existingtable.remove();
     }
       
 

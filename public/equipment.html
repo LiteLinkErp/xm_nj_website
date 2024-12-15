@@ -385,7 +385,35 @@ function formatTime(bookingTime) {
 
     // Append table to the container div
     bookingSummaryTable.appendChild(table);
-    bookingSummaryTable.appendChild(table);
+
+  //======================================
+  //Create second tabl for equipment
+  //======================================
+  // Read only the first row
+    const firstRow = data[0];
+    const rentedBallSet = firstRow.rentedBallSet;
+    const rentedPadelRacket = firstRow.rentedPadelRacket;
+
+    // Dynamically create the table
+    const tableContainer = document.getElementById('tableContainer');
+    const equipmentTable = document.createElement('table');
+    equipmentTable.border = '0';
+    equipmentTable.innerHTML = `
+      <thead>
+        <tr>
+          <th>Rented Ball Sets</th>
+          <th>Rented Padel Rackets</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>${rentedBallSet}</td>
+          <td>${rentedPadelRacket}</td>
+        </tr>
+      </tbody>
+    `;
+    
+    bookingSummaryTable.appendChild(equipmentTable);
 }
 
 //=====================================

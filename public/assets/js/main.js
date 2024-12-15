@@ -1,6 +1,34 @@
 /*
 Customize functions for xtreme padel zambia
 */
+
+//=====================================================
+// Get Rented Padel and Ball Qty and updated in storage
+//=====================================================
+function addEquipement(){
+  const padelQtyDropdown = document.getElementById('quantity');
+  const ballQtyDropdown  = document.getElementById('ball-quantity');
+  const padelQuantity    = parseInt(padelQtyDropdown.value, 10);
+  const ballQuantity     = parseInt(ballQtyDropdown.value, 10);
+
+  let bookingData = JSON.parse(localStorage.getItem('selectedBookings')) || {};
+
+    /*Add more attribute to Booking data  */
+    // Add the attributes to each row
+      bookingData = bookingData.map(booking => ({
+        ...booking,
+        rentedPadelRacket: padelQuantity,
+        rentedBallSet: ballQuantity
+      }));
+
+      // Save the updated data back to localStorage
+      localStorage.setItem('selectedBookings', JSON.stringify(bookingData));
+}
+
+
+//=====================================================
+// Reset slot selection when Booked for male or female changed
+//=====================================================
 function resetSlotSelection(){
     document.querySelectorAll('.selected-now').forEach(div => {
     div.classList.remove('selected-now');
@@ -15,6 +43,9 @@ function resetSlotSelection(){
   }
 }
 
+//=====================================================
+// expend table (Full screen)
+//=====================================================
 function expandTable(){
   const expendBtn = document.getElementById('expendBtn');
   const myDiv     = document.getElementById('tableContainer');
@@ -31,7 +62,10 @@ function expandTable(){
   }
   
 }
+
+//====================================
 /*function for updating racket qty*/ 
+//====================================
      function updateRacketQty(){
         const quantityDropdown = document.getElementById('quantity');
         const totalPriceElement = document.getElementById('total-price');
@@ -39,9 +73,12 @@ function expandTable(){
             const quantity = parseInt(quantityDropdown.value, 10);
             const totalPrice = quantity*300;
             totalPriceElement.textContent = totalPrice;
-     
+            addEquipement()
      }
-     /*function for updating bakk qty*/ 
+
+//====================================
+//function for updating bakk qty
+//====================================
      function updateBalltQty(){
       const quantityDropdown = document.getElementById('ball-quantity');
       const totalPriceElement = document.getElementById('ball-total-price');
@@ -50,9 +87,13 @@ function expandTable(){
           const quantity = parseInt(quantityDropdown.value, 10);
           const totalPrice = quantity*300;
           totalPriceElement.textContent = totalPrice;
+          addEquipement()
    
    }
-  //==================proceed booking function==================
+
+//====================================
+//proceed booking function
+//====================================
   function proceedBooking(){
     if (!window.selectedBookings) {
       window.selectedBookings = [];
@@ -74,6 +115,7 @@ function expandTable(){
     }
 
   }
+
   //===================================================================
   // Save Enquiry Function============================================
   //==================================================================

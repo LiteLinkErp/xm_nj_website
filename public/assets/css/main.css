@@ -2802,3 +2802,41 @@ section,
   }
 }
 
+
+/*Check box*/
+/* Hide the default checkbox */
+.custom-checkbox-container input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border: 2px solid #555;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Custom "checked" style */
+.custom-checkbox-container input[type="checkbox"]:checked + .custom-checkbox {
+  background-color: #007bff;
+  border-color: #007bff;
+  position: relative;
+}
+
+/* Add checkmark when checkbox is checked */
+.custom-checkbox-container input[type="checkbox"]:checked + .custom-checkbox::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 2px 2px 0 0;
+  transform: rotate(45deg);
+  top: 2px;
+  left: 6px;
+}
+

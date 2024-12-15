@@ -168,32 +168,36 @@
     
   <div class="bookingSummaryContainer" id ="bookingSummaryContainer"style="display: none;">
 
-    <div class="col-lg-8 " id="user-details-parent">
-      <form class="user-details-form" id="user-details-form">
-        <div class="row gy-4">
+            <div class="col-lg-8 " id="user-details-parent">
+                    <form class="user-details-form" id="user-details-form">
+                        <div class="row gy-4">
 
-          <div class="col-md-6">
-            <label for="name">Your Name</label>
-            <input type="text" name="user_name" id="user_name" class="form-control" maxlength="50" required>
-          </div>
+                            <div class="col-md-6">
+                              <label for="name">Your Name</label>
+                              <input type="text" name="user_name" id="user_name" class="form-control" maxlength="50" required>
+                            </div>
 
-          <div class="col-md-6">
-            <label for="email">Email</label>
-            <input type="email" name="user_email" id="user_email" class="form-control" maxlength="50"required>
-          </div>
+                            <div class="col-md-6">
+                              <label for="email">Email</label>
+                              <input type="email" name="user_email" id="user_email" class="form-control" maxlength="50"required>
+                            </div>
 
-          <div class="col-md-6">
-            <label for="mobile">Mobile No</label>
-            <input type="text" name="user_mobile" id="user_mobile" class="form-control" maxlength="10"required>
-          </div>
+                            <div class="col-md-6">
+                              <label for="mobile">Mobile No</label>
+                              <input type="text" name="user_mobile" id="user_mobile" class="form-control" maxlength="10"required>
+                            </div>
 
-          <div class="col-md-12">
-            <label for="teamMembers">Team Members Name</label>
-            <textarea name="user_teamMembers" id="user_teamMembers" class="form-control" maxlength="500" required></textarea>
-          </div>
-        </div>
-      </form>
-    </div> <!-- End user details Form -->
+                            <div class="col-md-12">
+                              <label for="teamMembers">Team Members Name</label>
+                              <textarea name="user_teamMembers" id="user_teamMembers" class="form-control" maxlength="500" required></textarea>
+                            </div>
+                        </div>
+                    </form>
+            </div> <!-- End user details Form -->
+
+            <div class="bookingSummaryTable" id ="bookingSummaryTable">
+              
+            </div>
   </div>
   </section><!--End Section Booking summary -->
 
@@ -335,7 +339,7 @@ function formatTime(bookingTime) {
     
 
     // Clear the container before rendering to avoid duplicates
-    const existingtable = bookingSummaryContainer.querySelector('table');
+    const existingtable = bookingSummaryTable.querySelector('table');
     if (existingtable) {
       existingtable.remove();
     }
@@ -378,7 +382,7 @@ function formatTime(bookingTime) {
     table.appendChild(tbody);
 
     // Append table to the container div
-    bookingSummaryContainer.appendChild(table);
+    bookingSummaryTable.appendChild(table);
 }
 
 

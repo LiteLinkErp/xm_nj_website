@@ -265,7 +265,42 @@ function expandTable(){
 
   async function confirmBooking() {
    
-    //event.preventDefault(); // Prevent the default form submission behavior
+       
+       const fieldsToValidate = [
+         { id: 'user_name', name: 'user_name' },
+         { id: 'user_email', name: 'user_email' },
+         { id: 'user_mobile', name: 'user_mobile' }
+       ];
+     
+       let isValid = true;
+     
+       // Loop through all the fields and validate them
+       fieldsToValidate.forEach(field => {
+         const input = document.getElementById(field.id);
+         if (!input.value.trim()) {
+           // If field is empty, set border to red
+           input.style.border = '1px solid red';
+           isValid = false;
+         } else {
+           // Otherwise, remove red border
+           input.style.border = '';
+         }
+       });
+     
+       if (isValid) {
+         // If all fields are valid, submit the form
+        
+       } else {
+         alertify.error('Please fill out all required fields.');
+         return;
+       }
+
+    // Get the values of the input fields
+    const userName             = document.getElementById('user_name').value;
+    const userEmail            = document.getElementById('user_email').value;
+    const userMobile           = document.getElementById('user_mobile').value;
+    const userTeamMembers      = document.getElementById('user_teamMembers').value;
+    
   
     let bookingData = JSON.parse(localStorage.getItem('selectedBookings')) || {};
     
@@ -281,10 +316,10 @@ function expandTable(){
     // Add the attributes to each row
       bookingData = bookingData.map(booking => ({
         ...booking,
-        bookedBy: 'Manglu',
-        email: 'mtyagi84@gmail.com',
-        mobileNo: '8953589055',
-        teamMembers: 'fdghhjghjhkjhkh'
+        bookedBy: userName,
+        email: userEmail,
+        mobileNo: userMobile,
+        teamMembers: userTeamMembers
       }));
 
       // Save the updated data back to localStorage

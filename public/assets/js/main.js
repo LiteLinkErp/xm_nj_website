@@ -53,7 +53,7 @@ function expandTable(){
      }
 
      if (window.selectedBookings.length === 0 || selectedValue === null){
-      alertify.alert("Error", 'Please select Booking For, Date, Time and Court', function() {
+      alertify.alert("Error", 'Please select Booking Date, Time and Court', function() {
         
       });
   

@@ -400,6 +400,14 @@ function formatTime(bookingTime) {
     const rentedBallSet = firstRow.rentedBallSet;
     const rentedPadelRacket = firstRow.rentedPadelRacket;
 
+    if (rentedPadelRacket == null || rentedPadelRacket == undefined || rentedPadelRacket == 0) {
+      rentedPadelRacket = ''
+     }
+
+     if (rentedBallSet == null || rentedBallSet == undefined || rentedBallSet == 0) {
+      rentedBallSet = ''
+     }
+
     // Dynamically create the table
     const tableContainer = document.getElementById('tableContainer');
     const equipmentTable = document.createElement('table');

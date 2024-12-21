@@ -2849,22 +2849,29 @@ section,
 }
 
 .popup-content {
-  background-color: white;
-  margin: 15% auto;
-  padding: 20px;
-  border-radius: 5px;
-  width: 300px;
-  text-align: center;
+  background-color: #0c0a0a;
+    color: wheat;
+    padding: 17px;
+    border-radius: 5px;
+    width: 90%;
+    text-align: center;
+    position: absolute;
+    top: 45%;
 }
 
+
 .close {
+  
   color: #aaa;
   font-size: 28px;
   font-weight: bold;
   position: absolute;
-  top: 5px;
-  right: 10px;
+  top: 0px;
+  right: 13px;
   cursor: pointer;
+  border-radius: 50%;
+  height: 20px;
+  text-align: center;
 }
 
 .close:hover,

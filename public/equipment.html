@@ -196,6 +196,14 @@
                             <div class="col-md-12 dv-custom-checkbox" >
                               <input type="checkbox" id="user_bookingContinue" checked />
                                 <span class="sp-custom-checkbox">Keep My Booking going</span>
+                                <span class="help-icon" id="helpIcon">?</span>
+                            </div>
+                            <!-- Popup window -->
+                            <div class="popup" id="popup">
+                              <div class="popup-content">
+                                  <span class="close" id="closePopup">&times;</span>
+                                  <p>This option allows you to keep your booking active without interruptions. It ensures your reservation is maintained for a longer period.</p>
+                              </div>
                             </div>
 
                         </div>
@@ -437,6 +445,27 @@ function formatTime(bookingTime) {
 // End showHideBookingSummary
 //=========================================
 
+// Get the help icon and the popup
+const helpIcon = document.getElementById("helpIcon");
+const popup = document.getElementById("popup");
+const closePopup = document.getElementById("closePopup");
+
+// When the user clicks the help icon, show the popup
+helpIcon.onclick = function() {
+    popup.style.display = "block";
+}
+
+// When the user clicks the close button, hide the popup
+closePopup.onclick = function() {
+    popup.style.display = "none";
+}
+
+// Close the popup if the user clicks outside of it
+window.onclick = function(event) {
+    if (event.target === popup) {
+        popup.style.display = "none";
+    }
+}
 
   </script>
 

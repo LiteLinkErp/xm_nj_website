@@ -2881,7 +2881,7 @@ section,
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: rgb(241, 11, 11);
   text-decoration: none;
   cursor: pointer;
 }

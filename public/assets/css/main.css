@@ -2772,7 +2772,7 @@ section,
 
 .radio-option input[type="radio"] {
   margin-right: 6px;
-  accent-color: #fff; /* Changes the selection dot to white */
+  accent-color: green; /* Changes the selection dot to white */
 }
 .radio-option span
 {color: white;
